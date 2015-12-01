@@ -162,9 +162,11 @@
                         dialogsCount = dialogsCount < 0 ? 0 : dialogsCount;
                         if (animationEndSupport && !options.disableAnimation) {
                             scope.$destroy();
-                            $dialog.unbind(animationEndEvent).bind(animationEndEvent, function () {
+                            $dialog.addClass('ngdialog-closing');
+                            // use a work around to avoid electron bug (mouse moving hold animationend event)
+                            setTimeout(function () {
                                 privateMethods.closeDialogElement($dialog, value);
-                            }).addClass('ngdialog-closing');
+                            }, 400); // fade out animation duration
                         } else {
                             scope.$destroy();
                             privateMethods.closeDialogElement($dialog, value);
