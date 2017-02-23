@@ -1,7 +1,7 @@
 {
-  "name": "ng-dialog",
+  "name": "@beary/ng-dialog",
   "version": "0.5.5",
-  "homepage": "https://github.com/likeastore/ngDialog",
+  "homepage": "https://github.com/bearyinnovative/ngDialog",
   "description": "Modal dialogs and popups provider for Angular.js applications",
   "main": "./js/ngDialog.js",
   "scripts": {
